@@ -1,0 +1,102 @@
+@mixin border-gray {
+  border: 1px #e6eaf0 solid;
+  border-radius: 10px;
+}
+$font-color-blur: #0c346a;
+.book-rental {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.sidebar {
+  width: 5%;
+}
+.right-section {
+  width: 95%;
+  .main {
+    display: flex;
+    .books-detail {
+      width: 72%;
+      background-color: #f8f8f8;
+      .books-category {
+        margin: 20px 0;
+      }
+      .results {
+        margin-left: 20px;
+        .results-header {
+          display: flex;
+          .result-title {
+            font-weight: 900;
+            font-size: 20px;
+          }
+          .sort-by {
+            width: 90%;
+            text-align: right;
+            .select {
+              border-style: none;
+            }
+          }
+        }
+      }
+      .book-detail {
+        display: flex;
+        flex-wrap: wrap;
+        @media screen and (max-width: 760px) {
+          .book {
+            width: 100%;
+          }
+        }
+        @media screen and (min-width:760px) {
+          .book {
+            width: 30%;
+          }
+        }
+        .book {
+          margin: 12px;
+          display: flex;
+          border-radius: 10px;
+          padding: 2px;
+
+          height: 70%;
+          background-color: #fff;
+          img {
+            height: 200px;
+            width: 150px;
+          }
+          .title {
+            font-size: 14px;
+            margin-bottom: 0;
+            padding-bottom: 0;
+          }
+          .subtitle {
+            color: #9fa2a9;
+            font-size: 12px;
+            margin-top: 5px;
+            margin-bottom: 10;
+          }
+          .type {
+            color: #0c346a;
+            background-color: #e1ebf7;
+            padding: 5px;
+            width: fit-content;
+            border-radius: 10px;
+            font-size: 12px;
+          }
+          .price {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+    .order-section {
+      width: 28%;
+    }
+  }
+}
+.btn {
+  padding: 15px;
+  margin-left: 10px;
+  @include border-gray;
+  color: $font-color-blur;
+}

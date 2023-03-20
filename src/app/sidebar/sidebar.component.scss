@@ -1,0 +1,14 @@
+.sidebar {
+  width: 5%;
+  height: 100%;
+  padding-right: 5px;
+  background-color: #fff;
+  box-shadow: 15px 0px 10px -15px #111;
+}
+
+.nav-items {
+  margin: 20px;
+  .item {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,45 @@
+<div class="book-rental">
+  <app-sidebar class="sidebar"></app-sidebar>
+  <div class="right-section">
+    <app-header class="header" (searchValue)="searchBook($event)"></app-header>
+    <div class="main">
+      <div class="books-detail">
+        <div class="books-category">
+          <button class="btn">All</button>
+          <button class="btn">Data Analytics</button>
+          <button class="btn">Hardware</button>
+          <button class="btn">Machine Learning</button>
+          <button class="btn">Programming</button>
+          <button class="btn">Web Development</button>
+        </div>
+        <div class="results">
+          <div class="results-header">
+            <p class="result-title">Results</p>
+            <p class="sort-by">
+              Sort by:<select class="select" #sort (change)="getDataBySortField(sort.value)">
+                <option value="title">Name</option>
+                <option value="subtitle">SubTitle</option>
+                <option value="category">Category</option>
+                <option value="price">Price</option>
+              </select>
+            </p>
+          </div>
+          <div class="book-detail">
+            <div class="book" *ngFor="let book of bookData">
+              <img [src]="book.image" />
+              <div class="book-info">
+                <p class="title">{{ book.title }}</p>
+                <p class="subtitle">{{ book.subtitle }}</p>
+                <div class="type">{{ book.category }}</div>
+                <div class="price">{{ book.price }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-section">
+        
+      </div>
+    </div>
+  </div>
+</div>
